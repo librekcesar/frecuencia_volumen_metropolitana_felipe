@@ -33,7 +33,7 @@
 
         function style(feature) {
             var values = cdmxprom.features.map(f => f.properties.Promedio);//Aqui se llama a la capa y el atributo a clasificar
-            var scale = chroma.scale('Greens').domain([Math.min(...values), Math.max(...values)]).classes(chroma.limits(values, 'jenks', 7));
+            var scale = chroma.scale('Blues').domain([Math.min(...values), Math.max(...values)]).classes(chroma.limits(values, 'jenks', 7));
             return {
                 fillColor: scale(feature.properties.Promedio),//aca se tiene que llamar de nuevo el atributo para fillcolor
                 weight: 1,
@@ -60,7 +60,7 @@
         // segunda capa con clasificación Natural Jenks
         function style2(feature) {
             var values = cdmxfrecu.features.map(f => f.properties.Volumen_frecuenciado);//Aqui se llama a la capa y el atributo a clasificar
-            var scale = chroma.scale('Greens').domain([Math.min(...values), Math.max(...values)]).classes(chroma.limits(values, 'jenks', 7));
+            var scale = chroma.scale('Blues').domain([Math.min(...values), Math.max(...values)]).classes(chroma.limits(values, 'jenks', 7));
             return {
                 fillColor: scale(feature.properties.Volumen_frecuenciado),//aca se tiene que llamar de nuevo el atributo para fillcolor
                 weight: 1,
